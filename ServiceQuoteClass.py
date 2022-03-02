@@ -24,7 +24,7 @@ class ServiceQuote:
     
     def set_parts_charges(self, pcharge):
         self.__parts_charges = pcharge
-    def set_model(self, lcharge):
+    def set_labor_charges(self, lcharge):
         self.__labor_charges = lcharge
 
     def get_parts_charges(self):
@@ -37,5 +37,6 @@ class ServiceQuote:
         return self.__sales_tax
 
     def get_total_charges(self):
-        total_charges = (self.__parts_charges + self.__labor_charges)*self.__sales_tax
-        return total_charges
+        total_charges = (self.__parts_charges + self.__labor_charges)
+        taxed = total_charges * self.__sales_tax
+        return taxed
